@@ -1,0 +1,45 @@
+## perl script for gene function enrichment analysis (Fisher's Exact Test) ##
+## Created by SherryDong (xrdong10@qq.com) ##
+## Requirement: Linux, Perl, R ##
+## USAGE:
+	        enrich.pl  (v1.1)
+
+                Usage:  enrich.pl  <database file> <input_file_name> <output_file_name>  [options]
+
+				database file :  database file for enrichment analyais
+
+				input_file_name:   input file name
+
+				output_file_name:       output file name
+
+				Options:
+
+				-h  Show help
+
+				-item   (item column number,default = 1)
+
+                -des    (des column number, default = 2)
+
+                -des_file (files to save description for genesets)
+
+                -bg     (bacground_file_name,default=no background file)
+
+                -list   (1-y|2-n,default=n)
+
+                -thre   (threshold,default = 0.01)
+
+                -max    (maximun size for des, default = no limitation)
+
+                -min    (minmun size for des, default = no limitation)
+
+                -adj    (need adj p value or not ,0-no,1-BH,2-FDR,default = no)
+
+                -low    (low existence for match,default = 0)
+
+                -multi  (whether the input has multi groups, default=0)
+
+                -filter ( use what filter or not, default = 0 (do not use))
+
+                -filter_column (filter column)
+## Demo:
+ perl enrich.pl  demo/omim/omim_disease_gene.txt demo/input.txt demo/output.txt -item 2 -des 1 -thre 0.1 -adj 2 -list 1
